@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058F60F8675E0100B6A4D925 /* libPods-ggg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0532E2359CD09B912285F3B /* libPods-ggg.a */; };
 		CE8F82671D74717700426BED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8F82661D74717700426BED /* main.m */; };
 		CE8F826A1D74717700426BED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8F82691D74717700426BED /* AppDelegate.m */; };
 		CE8F826D1D74717700426BED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8F826C1D74717700426BED /* ViewController.m */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F8AB0C9FE0B1795032AA99D /* Pods-ggg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ggg.release.xcconfig"; path = "Pods/Target Support Files/Pods-ggg/Pods-ggg.release.xcconfig"; sourceTree = "<group>"; };
+		BBB3617C428FE8A1936B1149 /* Pods-ggg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ggg.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ggg/Pods-ggg.debug.xcconfig"; sourceTree = "<group>"; };
+		C0532E2359CD09B912285F3B /* libPods-ggg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ggg.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F82621D74717700426BED /* ggg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8F82661D74717700426BED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE8F82681D74717700426BED /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058F60F8675E0100B6A4D925 /* libPods-ggg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0DF90840C68466ABE415EFD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0532E2359CD09B912285F3B /* libPods-ggg.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B1DD218F7AEDB4BC9FA8722 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBB3617C428FE8A1936B1149 /* Pods-ggg.debug.xcconfig */,
+				2F8AB0C9FE0B1795032AA99D /* Pods-ggg.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CE8F82591D74717700426BED = {
 			isa = PBXGroup;
 			children = (
 				CE8F82641D74717700426BED /* ggg */,
 				CE8F82631D74717700426BED /* Products */,
+				6B1DD218F7AEDB4BC9FA8722 /* Pods */,
+				0DF90840C68466ABE415EFD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE8F82791D74717800426BED /* Build configuration list for PBXNativeTarget "ggg" */;
 			buildPhases = (
+				0DBDF6279CCF4EC12225226E /* [CP] Check Pods Manifest.lock */,
 				CE8F825E1D74717700426BED /* Sources */,
 				CE8F825F1D74717700426BED /* Frameworks */,
 				CE8F82601D74717700426BED /* Resources */,
+				DCC17E14B84152B88CAFFAB8 /* [CP] Embed Pods Frameworks */,
+				73485F7E36859949C11E052E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +170,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DBDF6279CCF4EC12225226E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		73485F7E36859949C11E052E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ggg/Pods-ggg-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCC17E14B84152B88CAFFAB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ggg/Pods-ggg-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE8F825E1D74717700426BED /* Sources */ = {
@@ -263,6 +338,7 @@
 		};
 		CE8F827A1D74717800426BED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBB3617C428FE8A1936B1149 /* Pods-ggg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ggg/Info.plist;
@@ -274,6 +350,7 @@
 		};
 		CE8F827B1D74717800426BED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F8AB0C9FE0B1795032AA99D /* Pods-ggg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ggg/Info.plist;
@@ -302,6 +379,7 @@
 				CE8F827B1D74717800426BED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
